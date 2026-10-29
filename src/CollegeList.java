@@ -7,7 +7,7 @@ public class CollegeList {
         Faculty faculty = new Faculty();
         Employee employee = new Employee();
 
-        String choice,YorN;
+        String choice;
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Press E for Employee, F for Faculty, or S for Students: ");
