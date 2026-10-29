@@ -32,25 +32,37 @@ public class CollegeList {
         }
 
         else if (choice.equalsIgnoreCase("F")) {
-            System.out.println("Press Y if you're a regular and N if not.");
-            YorN = scanner.nextLine();
-            if (YorN.equalsIgnoreCase("Y")){
-                System.out.println("Type employee's name, contact number, salary, and department.");
-                System.out.println("Press ENTER after every input.");
 
-                faculty.setName(scanner.nextLine());
-                faculty.setContact(scanner.nextLine());
-                faculty.setSalary(scanner.nextDouble());
-                scanner.nextLine();
-                faculty.setDepartment(scanner.nextLine());
+            System.out.println("Type employee's name, contact number, salary, department and press Y if you're a regular and N if not.");
+            System.out.println("Press ENTER after every input.");
 
-                System.out.println("Name: " + faculty.getName());
-                System.out.println("Contact Number: " + faculty.getContact());
-                System.out.println("Salary: " + faculty.getSalary());
-                System.out.println("Department: " + faculty.getDepartment());
-                System.out.println("Regular: ");
+            faculty.setName(scanner.nextLine());
+            faculty.setContact(scanner.nextLine());
+            faculty.setSalary(scanner.nextDouble());
+            scanner.nextLine();
+            faculty.setDepartment(scanner.nextLine());
 
+            String answer = scanner.next();
+
+            if (answer.equalsIgnoreCase("Y")) {
+
+                faculty.setRegular(true);
+
+            } else if (answer.equalsIgnoreCase("N")) {
+
+                faculty.setRegular(false);
+
+            } else {
+
+                System.out.println("Please choose a letter between Y and N.");
+                return;
             }
+
+            System.out.println("Name: " + faculty.getName());
+            System.out.println("Contact Number: " + faculty.getContact());
+            System.out.println("Salary: " + faculty.getSalary());
+            System.out.println("Department: " + faculty.getDepartment());
+            System.out.println("Regular: " + faculty.isRegular());
         }
 
         else if (choice.equalsIgnoreCase("S")) {
